@@ -2,28 +2,17 @@ services:
   - type: web
     name: ai-counsellor-backend
     env: node
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-    
-  - type: web
-    name: ai-counsellor-frontend
-    env: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
-    routes:
-      - type: rewrite
-        source: /api/*
-        destination: https://ai-counsellor-backend.onrender.com/api/*
-      - type: rewrite
-        source: /*
-        destination: /index.html
-
-databases:
-  - name: ai-counsellor-db
-    databaseName: ai_counsellor
-    user: postgres
+      - key: JWT_SECRET
+        value: ai_counsellor_super_secure_jwt_key_2026_bhave_project_xyz789
+      - key: APP_NAME
+        value: AI Counsellor
+      - key: SESSION_TIMEOUT
+        value: 7d
