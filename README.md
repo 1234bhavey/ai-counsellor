@@ -148,11 +148,6 @@ npm run dev
 - **Health Check**: http://localhost:3000/api/health
 - **Analytics**: http://localhost:3001/analytics
 
-### Test Credentials
-```
-Email: bhaveysaluja5656@gmail.com
-Password: 123456
-```
 
 ## 📊 API Documentation
 
